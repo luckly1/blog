@@ -11,17 +11,21 @@
     <link rel="shortcut icon" th:href="@{/admin/images/favicon.png}"/>
     <script th:src="@{//cdn.bootcss.com/jquery/2.2.3/jquery.min.js}"></script>
     <script th:src="@{/jantent/assets/js/amazeui.min.js}"></script>
+    <script th:src="@{/admin/js/sweetalert.min.js}"></script>
     <link rel="stylesheet" th:href="@{/jantent/assets/css/amazeui.min.css}"/>
     <link rel="stylesheet" th:href="@{/jantent/assets/css/app.css}"/>
+    <!--<link rel="stylesheet" th:href="@{/admin/css/app.css}"/>-->
     <!--add by xj css begin-->
-    <link rel="stylesheet" th:href="@{/jantent/assets/css/canvas.css}"/>
+    <link rel="stylesheet" th:href="@{/admin/css/sweetalert.css}"/>
     <!--add by xj css end-->
     <!--add by xj js begin-->
     <script th:src="@{/admin/js/base.js}"></script>
     <script th:src="@{/admin/js/canvas.js}"></script>
+    <script th:src="@{/admin/js/background.js}"></script>
     <!--add by xj js end-->
 </head>
 <body onkeydown="enterSubmit(event)">
+<canvas id="background"></canvas>
     <div class="log">
         <div id="main_box" class="am-g">
             <div class="am-u-lg-3 am-u-md-6 am-u-sm-8 am-u-sm-centered log-content">
@@ -43,7 +47,7 @@
                     <br>
                     <button type="button"
                             class="am-btn am-btn-primary am-btn-block am-btn-lg am-radius am-animation-slide-bottom log-animation-delay"
-                     onclick="checkForm()">
+                     onclick="checkForm()" id="login_btn">
                         登&nbsp;录
                     </button>
                 </form>

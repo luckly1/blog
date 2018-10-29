@@ -1,5 +1,8 @@
 package springboot.util;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -7,7 +10,6 @@ import java.util.concurrent.ConcurrentHashMap;
  * map缓存
  *
  * @author tangj
- * @date 2018/1/21 11:27
  */
 public class MapCache {
     /**
@@ -88,6 +90,24 @@ public class MapCache {
         CacheObject cacheObject = new CacheObject(key, value, expired);
         cachePool.put(key, cacheObject);
     }
+
+
+    /**
+     * @Description:获取有效时间
+     * @Param: [key]
+     * @return: long
+     * @Author: xj
+     * @Date: 2018/10/26 11:30
+    */
+//    //1540526389
+//    public long queryValidTime(String key){
+//        CacheObject cacheObject = cachePool.get(key);
+//        long time = cacheObject.getExpired() - System.currentTimeMillis() / 1000>=0 ? 0 : cacheObject.getExpired() - System.currentTimeMillis() / 1000;
+//        System.out.println(time);
+//        return cacheObject == null ? 0:time;
+//    }
+
+
 
     /**
      * 设置一个hash缓存

@@ -12,7 +12,7 @@ body {
 .log {
     width:100%;
     height:100%;
-    background:url(../img/f10.jpg) #000 no-repeat;
+    /*background:url(../img/f10.jpg) #000 no-repeat;*/
     /*background-color: darkturquoise;*/
     background-size:100% 100%;
     color:#ffffff;
@@ -400,4 +400,17 @@ h1 span{
 
 .footer{
     text-align: center;
+}
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: -100;
+}
+#login_btn{
+    opacity: 0.5;
+}
+#login_btn:hover{
+    opacity: 1;
 }

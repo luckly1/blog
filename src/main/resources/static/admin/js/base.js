@@ -115,9 +115,10 @@ $.tale.prototype.alertBox = function (options) {
         cancelButtonColor: options.cancelButtonColor || '#d33',
         confirmButtonText: options.confirmButtonText || '确定',
         cancelButtonText: options.cancelButtonText || '取消'
-    }).then(function (e) {
+    }),function (e) {
         options.then && options.then(e);
-    }).catch(swal.noop);
+    },
+        swal.noop;
 };
 
 /**
