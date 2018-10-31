@@ -135,7 +135,7 @@ function timestampToTime(timestamp) {
     return Y+M+D+h+m+s;
 }
 /**
- * 保存贫困户信息
+ * 保存用户信息
  * @param status
  */
 function subPoorUser(status) {
@@ -147,7 +147,7 @@ function subPoorUser(status) {
     var time1 = Date.parse(date)/1000;
     var enjoyPolicy =  mditor.value;
     if (username == '') {
-        tale.alertWarn('请输入贫困户姓名');
+        tale.alertWarn('请输入用户姓名');
         return;
     }
     if (enjoyPolicy == '') {
@@ -167,7 +167,7 @@ function subPoorUser(status) {
         success: function (result) {
             if (result && result.success) {
                 tale.alertOk({
-                    text:'贫困户保存成功',
+                    text:'用户保存成功',
                     then: function () {
                         setTimeout(function () {
                             window.location.href = '/admin/pooruser';
@@ -175,7 +175,7 @@ function subPoorUser(status) {
                     }
                 });
             } else {
-                tale.alertError(result.msg || '保存贫困户失败');
+                tale.alertError(result.msg || '保存用户失败');
             }
         }
     });

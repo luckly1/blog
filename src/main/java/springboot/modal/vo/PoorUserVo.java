@@ -17,11 +17,11 @@ public class PoorUserVo implements Serializable {
      **/
     private String username;
     /**
-     * 贫困户手机号码
+     * 用户手机号码
      **/
     private String mobilePhone;
     /**
-     * 贫困户邮箱
+     * 用户邮箱
      **/
     private String email;
     /**
@@ -33,7 +33,7 @@ public class PoorUserVo implements Serializable {
      **/
     private String age;
     /**
-     * 贫困户状态
+     * 用户状态
      **/
     private String status;
     /**
@@ -45,11 +45,11 @@ public class PoorUserVo implements Serializable {
      **/
     private Integer created;
     /**
-     * 扶贫原因
+     *  原因
      **/
     private String poorReason;
     /**
-     * 脱贫时间
+     *  时间
      **/
     private Integer outpoorDate;
     /**

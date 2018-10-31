@@ -82,7 +82,7 @@ $.tale.prototype.alertConfirm = function (options) {
     options.title = options.title || '确定要删除吗？';
     options.text = options.text;
     options.showCancelButton = true;
-    options.type = 'question';
+    options.type = 'warning';
     this.alertBox(options);
 };
 
@@ -107,18 +107,29 @@ $.tale.prototype.alertBox = function (options) {
         title: options.title,
         text: options.text,
         type: options.type,
-        timer: options.timer || 9999,
-        showCloseButton: options.showCloseButton,
-        showCancelButton: options.showCancelButton,
-        showLoaderOnConfirm: options.showLoaderOnConfirm || false,
+        showCancelButton: true,
         confirmButtonColor: options.confirmButtonColor || '#3085d6',
-        cancelButtonColor: options.cancelButtonColor || '#d33',
         confirmButtonText: options.confirmButtonText || '确定',
-        cancelButtonText: options.cancelButtonText || '取消'
-    }),function (e) {
-        options.then && options.then(e);
-    },
-        swal.noop;
+        cancelButtonText: options.cancelButtonText || '取消',
+        closeOnConfirm: true,
+        closeOnCancel: true
+       //  title: options.title,
+       //  text: options.text,
+       //  type: options.type,
+       // // timer: options.timer || 9999,
+       //  showCloseButton: options.showCloseButton,
+       //  showCancelButton: options.showCancelButton,
+       //  showLoaderOnConfirm: options.showLoaderOnConfirm || false,
+       //  confirmButtonColor: options.confirmButtonColor || '#3085d6',
+       //  cancelButtonColor: options.cancelButtonColor || '#d33',
+       //  confirmButtonText: options.confirmButtonText || '确定',
+       //  cancelButtonText: options.cancelButtonText || '取消'
+    },function (e) {    //点取消会传入false   点确定传入true
+        if (e){
+            options.then && options.then(e);
+        }
+    });
+
 };
 
 /**

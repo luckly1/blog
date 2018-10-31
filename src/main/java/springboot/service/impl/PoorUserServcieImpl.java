@@ -75,7 +75,7 @@ public class PoorUserServcieImpl implements IPoorUserService {
 
     @Override
     public PoorUserVo getPoorUse(String id) {
-        // 先从redis中读取贫困户信息
+        // 先从redis中读取用户信息
         String poorUserKey = RedisKeyUtil.getKey(PoorUserKey.TABLE_NAME, PoorUserKey.MAJOR_KEY, id);
         PoorUserVo poorUserVo = (PoorUserVo) valueOperations.get(poorUserKey);
         if (poorUserVo == null){
@@ -92,7 +92,7 @@ public class PoorUserServcieImpl implements IPoorUserService {
     @Override
     public void updatePoorUser(PoorUserVo poorUserVo) {
         String poorUserKey = RedisKeyUtil.getKey(PoorUserKey.TABLE_NAME, PoorUserKey.MAJOR_KEY, Integer.toString(poorUserVo.getUid()));
-        // 检查贫困户输入
+        // 检查用户输入
         checkContent(poorUserVo);
         if (StringUtils.isBlank(poorUserVo.getEmail())) {
             poorUserVo.setEmail(null);
@@ -107,19 +107,19 @@ public class PoorUserServcieImpl implements IPoorUserService {
 
     private void  checkContent(PoorUserVo poorUserVo) throws TipException{
         if (null == poorUserVo) {
-            throw new TipException("贫困户对象不能为空");
+            throw new TipException("用户对象不能为空");
         }
         if (StringUtils.isBlank(poorUserVo.getUsername())) {
-            throw new TipException("贫困户姓名不能为空");
+            throw new TipException("用户姓名不能为空");
         }
         if (StringUtils.isBlank(poorUserVo.getEnjoyPolicy())) {
-            throw new TipException("贫困户享受政策不能为空");
+            throw new TipException("用户享受政策不能为空");
         }
         if (poorUserVo.getUsername().length() > 200) {
-            throw new TipException("贫困户姓名过长");
+            throw new TipException("用户姓名过长");
         }
         if (poorUserVo.getEnjoyPolicy().length() > 65000) {
-            throw new TipException("贫困户享受政策过长");
+            throw new TipException("用户享受政策过长");
         }
       /*  if (null == contents.getAuthorId()) {
             throw new TipException("请登录后发布文章");

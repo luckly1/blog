@@ -114,7 +114,7 @@ public class IndexController extends AbstractController {
         return this.render("page");
     }
     /**
-     * 贫困户内容页
+     * 用户内容页
      *
      * @param request
      * @return
@@ -130,7 +130,7 @@ public class IndexController extends AbstractController {
         return this.render("pooruser");
     }
     /**
-     * 贫困户内容页（预览)
+     * 用户内容页（预览)
      *
      * @param request
      * @return

@@ -26,7 +26,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * 贫困户管理
+ * 用户管理
  *
  * @author tangj
  * @date 2018/1/27 14:43
@@ -78,7 +78,7 @@ public class PoorUserController extends AbstractController {
         try {
             poorUserService.publish(poorUserVo);
         } catch (Exception e) {
-            String msg = "贫困户发布失败";
+            String msg = "用户发布失败";
             return ExceptionHelper.handlerException(logger, msg, e);
         }
         return RestResponseBo.ok();
@@ -92,7 +92,7 @@ public class PoorUserController extends AbstractController {
         try {
             poorUserService.updatePoorUser(poorUserVo);
         } catch (Exception e) {
-            String msg = "贫困户编辑失败";
+            String msg = "用户编辑失败";
             return ExceptionHelper.handlerException(logger, msg, e);
         }
         return RestResponseBo.ok();
