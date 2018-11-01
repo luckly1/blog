@@ -9,7 +9,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h4 class="page-title">文章管理</h4>
+                        <h4 class="page-title">页面管理</h4>
                     </div>
                     <div class="col-md-12">
                         <div class="pull-right">
@@ -70,6 +70,7 @@
                     success: function (result) {
                         if(result && result.success){
                             tale.alertOkAndReload('页面删除成功');
+                            window.location.href="/admin/page";
                         } else {
                             tale.alertError(result.msg || '页面删除失败');
                         }

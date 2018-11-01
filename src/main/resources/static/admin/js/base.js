@@ -7,57 +7,36 @@ $.extend({
 });
 
 /**
- * tale alert删除  // todo: 减少耦合度,链式操作替代  2017-02-27
- * @param options
- */
-// $.tale.prototype.alert_del = function (options) {
-//     swal({
-//         title: options.title || '警告信息',
-//         text: options.text || "确定删除吗？",
-//         type: 'warning',
-//         showCancelButton: true,
-//         confirmButtonColor: '#3085d6',
-//         cancelButtonColor: '#d33',
-//         confirmButtonText: '确定',
-//         cancelButtonText: '取消'
-//     }).then(function () {
-//         $.post(options.url, options.parame, function (result) {
-//             if (result && result.success) {
-//                 swal('提示信息', '删除成功', 'success');
-//                 setTimeout(function () {
-//                     window.location.reload();
-//                 }, 2000);
-//             } else {
-//                 swal("提示消息", result.msg, 'error');
-//             }
-//         });
-//     }).catch(swal.noop);
-// };
-
-/**
  * 成功弹框
  * @param options
  */
 $.tale.prototype.alertOk = function (options) {
     options = options.length ? {text:options} : ( options || {} );
     options.title = options.title || '操作成功';
+    options.reload = options.reload || false;
     options.text = options.text;
     options.showCancelButton = false;
     options.showCloseButton = false;
     options.type = 'success';
     this.alertBox(options);
+    //跳转页面
+    if (options.reload) {
+        window.location.reload();
+    }
 };
 
 /**
- * 弹出成功，并在500毫秒后刷新页面
+ * 弹出成功，并在1000毫秒后刷新页面
  * @param text
  */
 $.tale.prototype.alertOkAndReload = function (text) {
-    this.alertOk({text:text, then:function () {
-        setTimeout(function () {
-            window.location.reload();
-        }, 500);
-    }});
+    this.alertOk({text:text},{reload:true}      //新增reload  true or false
+        // this.alertOk({text:text, then:function () {
+        //     setTimeout(function () {
+        //         //window.location.reload();
+        //     }, 1000);
+        // }});
+    )
 };
 
 /**
@@ -149,9 +128,7 @@ $.tale.prototype.post = function (options) {
             self.hideLoading();
             options.success && options.success(result);
         },
-        error: function () {
-            //
-        }
+        error: function () {}
     });
 };
 
