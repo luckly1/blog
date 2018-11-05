@@ -69,8 +69,7 @@
                     data: {cid: cid},
                     success: function (result) {
                         if(result && result.success){
-                            tale.alertOkAndReload('页面删除成功');
-                            window.location.href="/admin/page";
+                            tale.alertOkAndReload('页面删除成功','/admin/page');
                         } else {
                             tale.alertError(result.msg || '页面删除失败');
                         }

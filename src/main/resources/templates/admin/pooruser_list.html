@@ -78,7 +78,7 @@
                     data: {cid: cid},
                     success: function (result) {
                         if(result && result.success){
-                            tale.alertOkAndReload('页面删除成功');
+                            tale.alertOkAndReload('页面删除成功','/admin/pooruser');
                         } else {
                             tale.alertError(result.msg || '页面删除失败');
                         }

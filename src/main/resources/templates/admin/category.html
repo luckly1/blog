@@ -110,7 +110,7 @@
                     $('#cform #mid').val('');
                     $('#cform #cname').val('');
                     if (result && result.success) {
-                        tale.alertOkAndReload('分类保存成功');
+                        tale.alertOkAndReload('分类保存成功','/admin/category');
                     } else {
                         tale.alertError(result.msg || '分类保存失败');
                     }
@@ -136,8 +136,7 @@
                     data: {mid: mid},
                     success: function (result) {
                         if (result && result.success) {
-                            tale.alertOkAndReload('删除成功');
-                            window.location.href="/admin/category";
+                            tale.alertOkAndReload('删除成功','/admin/category');
                         } else {
                             tale.alertError(result.msg || '删除失败');
                         }

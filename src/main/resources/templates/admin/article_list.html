@@ -77,8 +77,7 @@
                     data: {cid: cid},
                     success: function (result) {
                         if(result && result.success){
-                            tale.alertOkAndReload('文章删除成功');
-                            window.location.href="/admin/article";
+                            tale.alertOkAndReload('文章删除成功','/admin/article');
                         } else {
                             tale.alertError(result.msg || '文章删除失败');
                         }

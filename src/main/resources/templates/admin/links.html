@@ -105,7 +105,7 @@
                     $('#linkForm input').val('');
                     $('#linkForm #sort').val('0');
                     if(result && result.success){
-                        tale.alertOkAndReload('友链保存成功');
+                        tale.alertOkAndReload('友链保存成功','/admin/links');
                     } else {
                         tale.alertError(result.msg || '友链保存失败');
                     }
@@ -139,7 +139,7 @@
                     data: {mid: mid},
                     success: function (result) {
                         if(result && result.success){
-                            tale.alertOkAndReload('链接删除成功');
+                            tale.alertOkAndReload('链接删除成功','/admin/links');
                         } else {
                             tale.alertError(result.msg || '链接删除失败');
                         }

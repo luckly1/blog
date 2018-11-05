@@ -81,7 +81,7 @@
                     data: {coid: coid},
                     success: function (result) {
                         if (result && result.success) {
-                            tale.alertOkAndReload('评论删除成功');
+                            tale.alertOkAndReload('评论删除成功','/admin/comments');
                         } else {
                             tale.alertError(result.msg || '评论删除失败');
                         }
@@ -100,7 +100,7 @@
                     data: {coid: coid, status: "approved"},
                     success: function (result) {
                         if (result && result.success) {
-                            tale.alertOkAndReload('评论状态设置成功');
+                            tale.alertOkAndReload('评论状态设置成功','/admin/comments');
                         } else {
                             tale.alertError(result.msg || '评论设置失败');
                         }

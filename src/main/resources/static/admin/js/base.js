@@ -11,17 +11,18 @@ $.extend({
  * @param options
  */
 $.tale.prototype.alertOk = function (options) {
-    options = options.length ? {text:options} : ( options || {} );
+    options = options.length ? {text:options.text} : ( options || {} );
     options.title = options.title || '操作成功';
     options.reload = options.reload || false;
     options.text = options.text;
+    options.path = options.path;
     options.showCancelButton = false;
     options.showCloseButton = false;
     options.type = 'success';
     this.alertBox(options);
-    //跳转页面
+    //刷新页面
     if (options.reload) {
-        window.location.reload();
+        window.location.href=options.path;
     }
 };
 
@@ -29,14 +30,13 @@ $.tale.prototype.alertOk = function (options) {
  * 弹出成功，并在1000毫秒后刷新页面
  * @param text
  */
-$.tale.prototype.alertOkAndReload = function (text) {
-    this.alertOk({text:text},{reload:true}      //新增reload  true or false
-        // this.alertOk({text:text, then:function () {
-        //     setTimeout(function () {
-        //         //window.location.reload();
-        //     }, 1000);
-        // }});
-    )
+$.tale.prototype.alertOkAndReload = function (text,path) {  //提示信息，跳转路径
+    var obj = new Object();
+    obj.text=text;
+    obj.reload=true;
+    obj.path=path;
+    this.alertOk(obj)      //新增reload  true or false
+
 };
 
 /**

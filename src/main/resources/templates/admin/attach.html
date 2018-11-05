@@ -155,7 +155,7 @@
                     data: {id: id},
                     success: function (result) {
                         if (result && result.success) {
-                            tale.alertOkAndReload('附件删除成功');
+                            tale.alertOkAndReload('附件删除成功','/admin/attach');
                         } else {
                             tale.alertError(result.msg || '附件删除失败');
                         }
