@@ -16,8 +16,11 @@
         }
 
         if ($("#wrapper").hasClass("enlarged")) {
+            //xj 20181105 修改图标未隐藏问题
+            $("#title").hide();
             $(".left ul").removeAttr("style");
         } else {
+            $("#title").show();
             $(".subdrop").siblings("ul:first").show();
         }
 
