@@ -21,13 +21,14 @@ $.tale.prototype.alertOk = function (options) {
     options.type = 'success';
     this.alertBox(options);
     //刷新页面
+
     if (options.reload) {
         window.location.href=options.path;
     }
 };
 
 /**
- * 弹出成功，并在1000毫秒后刷新页面
+ * 弹出成功
  * @param text
  */
 $.tale.prototype.alertOkAndReload = function (text,path) {  //提示信息，跳转路径
@@ -36,7 +37,6 @@ $.tale.prototype.alertOkAndReload = function (text,path) {  //提示信息，跳
     obj.reload=true;
     obj.path=path;
     this.alertOk(obj)      //新增reload  true or false
-
 };
 
 /**

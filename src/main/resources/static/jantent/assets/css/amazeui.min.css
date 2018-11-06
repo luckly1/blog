@@ -1560,6 +1560,7 @@ pre code {
 }
 
 .am-btn {
+
     display: inline-block;
     margin-bottom: 0;
     padding: .5em 1em;
@@ -1570,7 +1571,7 @@ pre code {
     white-space: nowrap;
     background-image: none;
     border: 1px solid transparent;
-    border-radius: 0;
+    border-radius: 5;
     cursor: pointer;
     outline: 0;
     -webkit-appearance: none;

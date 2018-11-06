@@ -408,9 +408,16 @@ h1 span{
 
     z-index: -100;
 }
-#login_btn{
-    opacity: 0.5;
+
+
+<!--后面加的-->
+#loginForm input{
+    border:0px;
+    opacity:0.4;
 }
-#login_btn:hover{
-    opacity: 1;
+#loginForm input:hover{
+    opacity:0.7;
+}
+#loginForm .am-radius{
+    height:38px;
 }
