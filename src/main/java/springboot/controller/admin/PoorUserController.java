@@ -1,15 +1,11 @@
 package springboot.controller.admin;
 
 import com.github.pagehelper.PageInfo;
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-import springboot.constant.WebConst;
 import springboot.controller.AbstractController;
 import springboot.controller.helper.ExceptionHelper;
 import springboot.dto.LogActions;
@@ -49,7 +45,7 @@ public class PoorUserController extends AbstractController {
         PoorUserVoExample poorUserVoExample = new PoorUserVoExample();
         poorUserVoExample.setOrderByClause("created desc");
         poorUserVoExample.createCriteria().andTypeEqualTo(Types.ARTICLE.getType());
-        PageInfo<PoorUserVo> poorUserVoPageInfo = poorUserService.getArticlesWithpage(poorUserVoExample,  page, limit);
+        PageInfo<BlogUserVo> poorUserVoPageInfo = poorUserService.getArticlesWithpage(poorUserVoExample,  page, limit);
         request.setAttribute("poorUsers", poorUserVoPageInfo);
         return "admin/pooruser_list";
     }
@@ -62,8 +58,8 @@ public class PoorUserController extends AbstractController {
 
     @GetMapping(value = "/{uid}")
     public String editPage(@PathVariable String uid, HttpServletRequest request) {
-        PoorUserVo poorUserVo = poorUserService.getPoorUse(uid);
-        request.setAttribute("poorUsers", poorUserVo);
+        BlogUserVo blogUserVo = poorUserService.getPoorUse(uid);
+        request.setAttribute("poorUsers", blogUserVo);
         request.setAttribute(Types.ATTACH_URL.getType(), Commons.site_option(Types.ATTACH_URL.getType()));
         request.setAttribute("active", "pooruser");
         return "admin/pooruser_edit";
@@ -72,11 +68,11 @@ public class PoorUserController extends AbstractController {
     @PostMapping(value = "publish")
     @ResponseBody
     @Transactional(rollbackFor = TipException.class)
-    public RestResponseBo publishPage(PoorUserVo poorUserVo, HttpServletRequest request) {
+    public RestResponseBo publishPage(BlogUserVo blogUserVo, HttpServletRequest request) {
         UserVo users = this.user(request);
-        poorUserVo.setType(Types.ARTICLE.getType());
+        blogUserVo.setType(Types.ARTICLE.getType());
         try {
-            poorUserService.publish(poorUserVo);
+            poorUserService.publish(blogUserVo);
         } catch (Exception e) {
             String msg = "用户发布失败";
             return ExceptionHelper.handlerException(logger, msg, e);
@@ -87,10 +83,10 @@ public class PoorUserController extends AbstractController {
     @PostMapping(value = "modify")
     @ResponseBody
     @Transactional(rollbackFor = TipException.class)
-    public RestResponseBo modifyArticle(PoorUserVo poorUserVo, HttpServletRequest request) {
-        poorUserVo.setType(Types.ARTICLE.getType());
+    public RestResponseBo modifyArticle(BlogUserVo blogUserVo, HttpServletRequest request) {
+        blogUserVo.setType(Types.ARTICLE.getType());
         try {
-            poorUserService.updatePoorUser(poorUserVo);
+            poorUserService.updatePoorUser(blogUserVo);
         } catch (Exception e) {
             String msg = "用户编辑失败";
             return ExceptionHelper.handlerException(logger, msg, e);

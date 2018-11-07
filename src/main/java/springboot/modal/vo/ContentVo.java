@@ -1,23 +1,23 @@
 package springboot.modal.vo;
 
 public class ContentVo {
-    private Integer cid;
+    private Integer cid;    //文章主键
 
-    private String title;
+    private String title;   //文章标题
 
-    private String slug;
+    private String slug;    //
 
-    private Integer created;
+    private Integer created;    //创建时间
 
-    private Integer modified;
+    private Integer modified;   //
 
-    private Integer authorId;
+    private Integer authorId;   //作者id
 
-    private String type;
+    private String type;        //类型
 
-    private String status;
+    private String status;      //发布状态
 
-    private String tags;
+    private String tags;        //标签
 
     private String categories;
 
@@ -33,7 +33,7 @@ public class ContentVo {
 
     private String thumbimg;
 
-    private String content;
+    private String content;     //内容
 
     public Integer getCid() {
         return cid;

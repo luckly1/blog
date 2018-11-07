@@ -3,8 +3,7 @@ package springboot.modal.vo;
 import java.io.Serializable;
 
 /**
- * @author tangj
- * @date 2018/1/21 11:16
+ * @author xj
  */
 public class OptionVo implements Serializable {
     /**

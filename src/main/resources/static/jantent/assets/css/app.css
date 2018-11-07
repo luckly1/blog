@@ -410,7 +410,9 @@ h1 span{
 }
 
 
-<!--后面加的-->
+/**
+  登录页面优化
+ */
 #loginForm input{
     border:0px;
     opacity:0.4;

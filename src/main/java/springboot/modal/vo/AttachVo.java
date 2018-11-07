@@ -3,13 +3,12 @@ package springboot.modal.vo;
 import java.io.Serializable;
 
 /**
- * @author tangj
- * @date 2018/1/21 11:08
+ * @author xiaojun
  */
 public class AttachVo implements Serializable {
-    private Integer id;
+    private Integer id;     //id
 
-    private String fname;
+    private String fname;   //
 
     private String ftype;
 

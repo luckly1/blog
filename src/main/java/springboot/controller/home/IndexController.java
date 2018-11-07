@@ -21,7 +21,7 @@ import springboot.modal.bo.RestResponseBo;
 import springboot.modal.vo.CommentVo;
 import springboot.modal.vo.ContentVo;
 import springboot.modal.vo.MetaVo;
-import springboot.modal.vo.PoorUserVo;
+import springboot.modal.vo.BlogUserVo;
 import springboot.service.*;
 import springboot.util.IpUtil;
 import springboot.util.MyUtils;
@@ -121,11 +121,11 @@ public class IndexController extends AbstractController {
      */
     @GetMapping(value = {"pooruser/{uid}", "pooruser/{uid}.html"})
     public String getPoorUser(HttpServletRequest request, @PathVariable String uid) {
-        PoorUserVo poorUserVo = poorUserService.getPoorUse(uid);
-        if (null == poorUserVo || "draft".equals(poorUserVo.getStatus())) {
+        BlogUserVo blogUserVo = poorUserService.getPoorUse(uid);
+        if (null == blogUserVo || "draft".equals(blogUserVo.getStatus())) {
             return this.render_404();
         }
-        request.setAttribute("poorUser", poorUserVo);
+        request.setAttribute("poorUser", blogUserVo);
         request.setAttribute("is_post", true);
         return this.render("pooruser");
     }
@@ -137,11 +137,11 @@ public class IndexController extends AbstractController {
      */
     @GetMapping(value = {"pooruser/{uid}/preview", "pooruser/{uid}.html"})
     public String poorUserPreview(HttpServletRequest request, @PathVariable String uid) {
-        PoorUserVo poorUserVo = poorUserService.getPoorUse(uid);
-        if (null == poorUserVo || "draft".equals(poorUserVo.getStatus())) {
+        BlogUserVo blogUserVo = poorUserService.getPoorUse(uid);
+        if (null == blogUserVo || "draft".equals(blogUserVo.getStatus())) {
             return this.render_404();
         }
-        request.setAttribute("poorUser", poorUserVo);
+        request.setAttribute("poorUser", blogUserVo);
         request.setAttribute("is_post", true);
         return this.render("prepooruser");
     }
