@@ -15,8 +15,7 @@ import springboot.util.PortChecker;
 import java.net.InetSocketAddress;
 
 /**
- * @author tangj
- * @date 2018/4/15 15:27
+ * @author xj
  */
 public class HttpNettyServer {
     private static final Logger logger = LoggerFactory.getLogger(HttpNettyServer.class);

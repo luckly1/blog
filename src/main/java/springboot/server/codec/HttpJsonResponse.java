@@ -3,8 +3,7 @@ package springboot.server.codec;
 import io.netty.handler.codec.http.FullHttpResponse;
 
 /**
- * @author tangj
- * @date 2018/4/15 17:53
+ * @author xj
  */
 public class HttpJsonResponse {
     private FullHttpResponse httpResponse;

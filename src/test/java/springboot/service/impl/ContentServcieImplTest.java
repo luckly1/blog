@@ -12,8 +12,7 @@ import springboot.service.IContentService;
 import static org.junit.Assert.*;
 
 /**
- * @author tangj
- * @date 2018/5/13 17:12
+ * @author xj
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest

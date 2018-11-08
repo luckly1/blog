@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author tangj
- * @date 2018/1/21 15:02
+ * @author xj
  */
 public class UserVoExample {
     protected String orderByClause;

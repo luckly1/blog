@@ -7,8 +7,7 @@ import java.util.List;
 /**
  * 返回页面的评论，包含父子评论内容
  *
- * @author tangj
- * @date 2018/1/28 15:48
+ * @author xj
  */
 public class CommentBo extends CommentVo {
     private int levels;

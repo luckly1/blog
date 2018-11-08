@@ -15,7 +15,7 @@ import springboot.modal.bo.RestResponseBo;
 import springboot.modal.vo.*;
 import springboot.service.IContentService;
 import springboot.service.ILogService;
-import springboot.service.IPoorUserService;
+import springboot.service.IBlogUserService;
 import springboot.util.Commons;
 
 import javax.annotation.Resource;
@@ -24,18 +24,17 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * 用户管理
  *
- * @author tangj
- * @date 2018/1/27 14:43
+ * @author xj
  */
 @Controller
 @RequestMapping("admin/pooruser")
-public class PoorUserController extends AbstractController {
-    private static final Logger logger = LoggerFactory.getLogger(PoorUserController.class);
+public class BlogUserController extends AbstractController {
+    private static final Logger logger = LoggerFactory.getLogger(BlogUserController.class);
 
     @Resource
     private IContentService contentService;
     @Resource
-    private IPoorUserService poorUserService;
+    private IBlogUserService poorUserService;
 
     @Resource
     private ILogService logService;

@@ -1,0 +1,8 @@
+lombok 安装：https://blog.csdn.net/shmily_lsl/article/details/80689307
+
+<!--lombok-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.6</version>
+        </dependency>

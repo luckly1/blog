@@ -1,5 +1,6 @@
 package springboot.modal.vo;
 
+
 public class ContentVo {
     private Integer cid;    //文章主键
 

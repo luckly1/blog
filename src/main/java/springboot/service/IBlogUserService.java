@@ -5,10 +5,9 @@ import springboot.modal.vo.BlogUserVo;
 import springboot.modal.vo.PoorUserVoExample;
 
 /**
- * @author tangj
- * @date 2018/1/24 21:04
+ * @author xj
  */
-public interface IPoorUserService {
+public interface IBlogUserService {
 
     /**
      * @param page

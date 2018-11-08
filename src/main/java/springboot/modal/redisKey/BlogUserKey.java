@@ -1,12 +1,11 @@
 package springboot.modal.redisKey;
 
 /**
- * @author tangj
- * @date 2018/5/13 17:45
+ * @author xj
  */
-public class PoorUserKey {
+public class BlogUserKey {
     // 表名
-    public static final String TABLE_NAME = "t_poorusers";
+    public static final String TABLE_NAME = "t_blogusers";
 
     // 主键名
     public static final String MAJOR_KEY = "uid";

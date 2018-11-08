@@ -5,8 +5,7 @@ import springboot.modal.vo.ContentVo;
 import springboot.modal.vo.ContentVoExample;
 
 /**
- * @author tangj
- * @date 2018/1/24 21:04
+ * @author xj
  */
 public interface IContentService {
     /**

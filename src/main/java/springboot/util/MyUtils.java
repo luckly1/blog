@@ -33,8 +33,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @author tangj
- * @date 2018/1/21 19:48
+ * @author xj
  */
 public class MyUtils {
 

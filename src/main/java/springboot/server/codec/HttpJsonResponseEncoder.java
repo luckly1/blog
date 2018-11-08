@@ -7,8 +7,7 @@ import io.netty.handler.codec.http.*;
 import java.util.List;
 
 /**
- * @author tangj
- * @date 2018/4/15 21:12
+ * @author xj
  */
 public class HttpJsonResponseEncoder extends AbstractHttpJsonEncoder<HttpJsonResponse>{
 

@@ -19,12 +19,13 @@ $.tale.prototype.alertOk = function (options) {
     options.showCancelButton = false;
     options.showCloseButton = false;
     options.type = 'success';
+    options.timer = 2000;
     this.alertBox(options);
     //刷新页面
-
     if (options.reload) {
         window.location.href=options.path;
     }
+
 };
 
 /**
@@ -86,12 +87,13 @@ $.tale.prototype.alertBox = function (options) {
         title: options.title,
         text: options.text,
         type: options.type,
-        showCancelButton: true,
+        showCancelButton: options.showCancelButton,
         confirmButtonColor: options.confirmButtonColor || '#3085d6',
         confirmButtonText: options.confirmButtonText || '确定',
         cancelButtonText: options.cancelButtonText || '取消',
         closeOnConfirm: true,
-        closeOnCancel: true
+        closeOnCancel: true,
+        timer:options.timer || 9999
        //  title: options.title,
        //  text: options.text,
        //  type: options.type,

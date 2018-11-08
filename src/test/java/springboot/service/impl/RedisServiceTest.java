@@ -26,8 +26,7 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 /**
- * @author tangj
- * @date 2018/5/12 19:57
+ * @author xj
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest

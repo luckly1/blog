@@ -18,8 +18,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @author tangj
- * @date 2018/1/21 21:56
+ * @author xj
  */
  @Component
 public class Commons {

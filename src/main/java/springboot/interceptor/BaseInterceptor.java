@@ -17,8 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author tangj
- * @date 2018/1/21 22:27
+ * @author xj
  */
 @Component
 public class BaseInterceptor implements HandlerInterceptor {

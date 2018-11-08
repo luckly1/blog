@@ -9,8 +9,7 @@ import springboot.util.GsonUtils;
 import java.nio.charset.Charset;
 
 /**
- * @author tangj
- * @date 2018/4/15 18:02
+ * @author xj
  */
 public abstract class AbstractHttpJsonEncoder<T> extends MessageToMessageEncoder<T>{
     final static Charset utf8 = Charset.forName("utf-8");

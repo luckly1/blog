@@ -7,8 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
- * @author tangj
- * @date 2018/1/21 21:31
+ * @author xj
  */
 public class DateKit {
     public static final int INTERVAL_DAY = 1;

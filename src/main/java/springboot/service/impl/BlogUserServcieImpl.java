@@ -11,10 +11,10 @@ import org.springframework.stereotype.Service;
 import springboot.dao.ContentVoMapper;
 import springboot.dao.PoorUserVoMapper;
 import springboot.exception.TipException;
-import springboot.modal.redisKey.PoorUserKey;
+import springboot.modal.redisKey.BlogUserKey;
 import springboot.modal.vo.BlogUserVo;
 import springboot.modal.vo.PoorUserVoExample;
-import springboot.service.IPoorUserService;
+import springboot.service.IBlogUserService;
 import springboot.util.DateKit;
 import springboot.util.RedisKeyUtil;
 
@@ -23,11 +23,10 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author tangj
- * @date 2018/1/24 21:21
+ * @author xj
  */
 @Service
-public class PoorUserServcieImpl implements IPoorUserService {
+public class BlogUserServcieImpl implements IBlogUserService {
 
     @Resource
     private ContentVoMapper contentDao;
@@ -57,22 +56,22 @@ public class PoorUserServcieImpl implements IPoorUserService {
 
         int time = DateKit.getCurrentUnixTime();
         blogUserVo.setCreated(time);
-        if(blogUserVo.getOutpoorDate()!=null){
-            blogUserVo.setOutpoorDate(time);
-        }
+//        if(blogUserVo.getOutpoorDate()!=null){
+//            blogUserVo.setOutpoorDate(time);
+//        }
         poorUserDao.insert(blogUserVo);
     }
 
     @Override
     public BlogUserVo getPoorUse(String id) {
         // 先从redis中读取用户信息
-        String poorUserKey = RedisKeyUtil.getKey(PoorUserKey.TABLE_NAME, PoorUserKey.MAJOR_KEY, id);
+        String poorUserKey = RedisKeyUtil.getKey(BlogUserKey.TABLE_NAME, BlogUserKey.MAJOR_KEY, id);
         BlogUserVo blogUserVo = (BlogUserVo) valueOperations.get(poorUserKey);
         if (blogUserVo == null){
             if (StringUtils.isNotBlank(id)) {
                     blogUserVo = poorUserDao.selectByPrimaryKey(Integer.valueOf(id));
                     valueOperations.set(poorUserKey, blogUserVo);
-                    redisService.expireKey(poorUserKey,PoorUserKey.LIVE_TIME, TimeUnit.HOURS);
+                    redisService.expireKey(poorUserKey, BlogUserKey.LIVE_TIME, TimeUnit.HOURS);
                     return blogUserVo;
             }
         }
@@ -81,7 +80,7 @@ public class PoorUserServcieImpl implements IPoorUserService {
 
     @Override
     public void updatePoorUser(BlogUserVo blogUserVo) {
-        String poorUserKey = RedisKeyUtil.getKey(PoorUserKey.TABLE_NAME, PoorUserKey.MAJOR_KEY, Integer.toString(blogUserVo.getUid()));
+        String poorUserKey = RedisKeyUtil.getKey(BlogUserKey.TABLE_NAME, BlogUserKey.MAJOR_KEY, Integer.toString(blogUserVo.getUid()));
         // 检查用户输入
         checkContent(blogUserVo);
         if (StringUtils.isBlank(blogUserVo.getEmail())) {
@@ -91,7 +90,7 @@ public class PoorUserServcieImpl implements IPoorUserService {
         blogUserVo.setEnjoyPolicy(EmojiParser.parseToAliases(blogUserVo.getEnjoyPolicy()));
         poorUserDao.updateByPrimaryKeySelective(blogUserVo);
         valueOperations.set(poorUserKey, blogUserVo);
-        redisService.expireKey(poorUserKey,PoorUserKey.LIVE_TIME, TimeUnit.HOURS);
+        redisService.expireKey(poorUserKey, BlogUserKey.LIVE_TIME, TimeUnit.HOURS);
 
     }
 

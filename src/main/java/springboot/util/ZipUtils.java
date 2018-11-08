@@ -7,8 +7,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 /**
- * @author tangj
- * @date 2018/1/23 14:03
+ * @author xj
  */
 public class ZipUtils {
     public static void zipFolder(String srcFolder, String destZipFile) throws Exception {

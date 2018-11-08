@@ -5,8 +5,7 @@ import springboot.modal.vo.LogVo;
 import java.util.List;
 
 /**
- * @author tangj
- * @date 2018/1/21 20:50
+ * @author xj
  */
 public interface ILogService {
     /**

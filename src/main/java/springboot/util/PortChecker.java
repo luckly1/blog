@@ -7,8 +7,7 @@ import java.net.Socket;
 /**
  * 检查端口是否开放
  *
- * @author tangj
- * @date 2018/4/15 15:33
+ * @author xj
  */
 public class PortChecker {
     public static boolean checkPort(String ip,int port){

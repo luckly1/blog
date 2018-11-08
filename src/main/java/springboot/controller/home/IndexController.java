@@ -39,8 +39,7 @@ import java.util.List;
 /**
  * 首页控制
  *
- * @author tangj
- * @date 2018/2/17 9:47
+ * @author xj
  */
 @Controller
 public class IndexController extends AbstractController {
@@ -58,7 +57,7 @@ public class IndexController extends AbstractController {
     @Resource
     private ISiteService siteService;
     @Resource
-    private IPoorUserService poorUserService;
+    private IBlogUserService poorUserService;
 
     /**
      * 博客首页

@@ -13,8 +13,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * @author tangj
- * @date 2018/1/21 20:52
+ * @author xj
  */
 @Service
 public class LogServiceImpl implements ILogService{

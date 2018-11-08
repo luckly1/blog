@@ -1,11 +1,13 @@
 package springboot.modal.vo;
 
+import lombok.Data;
+
 import java.io.Serializable;
 
 /**
- * @author tangj
- * @date 2018/1/21 11:17
+ * @author xj
  */
+@Data
 public class RelationshipVo implements Serializable{
     /**
      * 内容主键
@@ -19,19 +21,4 @@ public class RelationshipVo implements Serializable{
 
     private static final long serialVersionUID = 1L;
 
-    public Integer getCid() {
-        return cid;
-    }
-
-    public void setCid(Integer cid) {
-        this.cid = cid;
-    }
-
-    public Integer getMid() {
-        return mid;
-    }
-
-    public void setMid(Integer mid) {
-        this.mid = mid;
-    }
 }

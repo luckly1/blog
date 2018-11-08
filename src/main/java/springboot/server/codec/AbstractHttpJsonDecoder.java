@@ -10,8 +10,7 @@ import springboot.util.GsonUtils;
 import java.nio.charset.Charset;
 
 /**
- * @author tangj
- * @date 2018/4/15 19:23
+ * @author xj
  */
 public abstract class AbstractHttpJsonDecoder<T> extends MessageToMessageDecoder<T>{
 

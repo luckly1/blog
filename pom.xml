@@ -45,7 +45,7 @@
             <version>1.0.18</version>
         </dependency>
 
-        <!-- netty -->
+        <!-- netty  Java NIO实现一个高性能的RPC框架-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
@@ -60,7 +60,7 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- jsoup-->
+        <!-- jsoup  HTML解析器-->
         <dependency>
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
@@ -155,10 +155,19 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
+
+        <!--log4j-->
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.16</version>
+        </dependency>
+
+        <!--lombok-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.6</version>
         </dependency>
     </dependencies>
 

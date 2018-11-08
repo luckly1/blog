@@ -29,8 +29,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author tangj
- * @date 2018/1/24 21:21
+ * @author xj
  */
 @Service
 public class ContentServcieImpl implements IContentService {

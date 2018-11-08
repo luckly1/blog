@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * map缓存
  *
- * @author tangj
+ * @author xj
  */
 public class MapCache {
     /**

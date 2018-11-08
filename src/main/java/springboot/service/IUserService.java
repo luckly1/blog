@@ -3,8 +3,7 @@ package springboot.service;
 import springboot.modal.vo.UserVo;
 
 /**
- * @author tangj
- * @date 2018/1/21 14:22
+ * @author xj
  */
 public interface IUserService {
     /**
