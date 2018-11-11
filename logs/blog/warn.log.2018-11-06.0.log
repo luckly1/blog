@@ -1,0 +1,7 @@
+2018-11-06 23:09:58,862 WARN  o.t.templatemode.TemplateMode[150] - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2018-11-06 23:17:25,725 WARN  o.t.templatemode.TemplateMode[150] - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2018-11-06 23:22:29,769 WARN  o.t.templatemode.TemplateMode[150] - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2018-11-06 23:39:57,013 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver[189] - Resolved exception caused by Handler execution: springboot.exception.TipException: query content by id and return is not one
+2018-11-06 23:40:01,236 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver[189] - Resolved exception caused by Handler execution: springboot.exception.TipException: query content by id and return is not one
+2018-11-06 23:41:53,548 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver[189] - Resolved exception caused by Handler execution: springboot.exception.TipException: query content by id and return is not one
+2018-11-06 23:44:18,998 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver[189] - Resolved exception caused by Handler execution: springboot.exception.TipException: query content by id and return is not one

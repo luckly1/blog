@@ -1,0 +1,42 @@
+2018-11-11 14:55:33,527 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 14:56:48,016 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 14:57:06,804 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 14:58:08,437 ERROR s.controller.GlobalExceptionHandler[22] - find exception:e+Error attempting to get column 'status' from result set.  Cause: java.sql.SQLException: Invalid value for getInt() - 'publish'
+; SQL []; Invalid value for getInt() - 'publish'; nested exception is java.sql.SQLException: Invalid value for getInt() - 'publish'
+2018-11-11 14:58:11,988 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 15:25:46,592 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 15:41:06,719 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 15:41:37,936 ERROR s.controller.GlobalExceptionHandler[22] - find exception:e+Error attempting to get column 'status' from result set.  Cause: java.sql.SQLException: Invalid value for getInt() - 'publish'
+; SQL []; Invalid value for getInt() - 'publish'; nested exception is java.sql.SQLException: Invalid value for getInt() - 'publish'
+2018-11-11 15:41:40,619 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 15:58:55,926 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:01:31,854 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:01:39,644 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:01:59,312 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:02:01,262 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:02:01,880 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:02:27,266 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:02:35,744 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:02:53,080 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:03:20,908 ERROR s.controller.GlobalExceptionHandler[22] - find exception:e+Required int parameter 'cid' is not present
+2018-11-11 16:03:27,261 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:03:33,989 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:03:35,442 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:04:03,306 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:04:53,799 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:05:03,249 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:13:18,810 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:13:30,482 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:13:39,262 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:14:40,760 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:14:43,618 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:15:27,238 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:18:19,405 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:20:09,719 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:20:11,788 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:20:49,260 ERROR s.controller.GlobalExceptionHandler[22] - find exception:e+Error attempting to get column 'status' from result set.  Cause: java.sql.SQLException: Invalid value for getInt() - 'publish'
+; SQL []; Invalid value for getInt() - 'publish'; nested exception is java.sql.SQLException: Invalid value for getInt() - 'publish'
+2018-11-11 16:20:52,147 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:20:55,080 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:20:58,572 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-11 16:21:33,131 ERROR s.controller.GlobalExceptionHandler[22] - find exception:e+Required int parameter 'cid' is not present

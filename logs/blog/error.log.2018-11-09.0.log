@@ -1,0 +1,15 @@
+2018-11-09 00:06:33,341 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-09 00:16:33,146 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-09 00:19:52,407 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-09 00:27:06,441 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-09 00:28:11,338 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-09 00:31:33,304 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-09 00:33:30,276 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-09 00:34:26,013 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-09 00:36:17,561 ERROR s.controller.GlobalExceptionHandler[22] - find exception:e+Error attempting to get column 'status' from result set.  Cause: java.sql.SQLException: Invalid value for getInt() - 'publish'
+; SQL []; Invalid value for getInt() - 'publish'; nested exception is java.sql.SQLException: Invalid value for getInt() - 'publish'
+2018-11-09 00:36:22,715 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-09 00:42:55,951 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-09 00:47:56,310 ERROR s.controller.GlobalExceptionHandler[22] - find exception:e+Error attempting to get column 'status' from result set.  Cause: java.sql.SQLException: Invalid value for getInt() - 'publish'
+; SQL []; Invalid value for getInt() - 'publish'; nested exception is java.sql.SQLException: Invalid value for getInt() - 'publish'
+2018-11-09 00:48:03,641 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one

@@ -1,0 +1,7 @@
+2018-11-08 23:31:05,661 ERROR s.controller.GlobalExceptionHandler[22] - find exception:e+Error attempting to get column 'status' from result set.  Cause: java.sql.SQLException: Invalid value for getInt() - 'publish'
+; SQL []; Invalid value for getInt() - 'publish'; nested exception is java.sql.SQLException: Invalid value for getInt() - 'publish'
+2018-11-08 23:31:17,013 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-08 23:36:41,653 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-08 23:39:51,135 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-08 23:47:54,716 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
+2018-11-08 23:51:41,158 ERROR s.controller.GlobalExceptionHandler[16] - find exception:e+query content by id and return is not one
