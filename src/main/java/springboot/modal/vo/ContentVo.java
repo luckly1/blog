@@ -10,7 +10,7 @@ public class ContentVo {
 
     private Integer created;    //创建时间
 
-    private Integer modified;   //
+    private Integer modified;   //修改
 
     private Integer authorId;   //作者id
 
@@ -20,19 +20,19 @@ public class ContentVo {
 
     private String tags;        //标签
 
-    private String categories;
+    private String categories;  //类别
 
-    private Integer hits;
+    private Integer hits;       //点击
 
-    private Integer commentsNum;
+    private Integer commentsNum;    //浏览数
 
-    private Boolean allowComment;
+    private Boolean allowComment;   //允许评论
 
-    private Boolean allowPing;
+    private Boolean allowPing;      //允许Ping
 
-    private Boolean allowFeed;
+    private Boolean allowFeed;      //允许订阅
 
-    private String thumbimg;
+    private String thumbimg;        //缩略图
 
     private String content;     //内容
 

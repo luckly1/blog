@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" th:with="title='保存用户',active='pooruser'">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:with="title='保存用户',active='bloguser'">
 <header th:replace="admin/header::headerFragment(${title},${active})"></header>
 <link th:href="@{/admin/plugins/tagsinput/jquery.tagsinput.css}" rel="stylesheet"/>
 <link th:href="@{/admin/plugins/select2.dist.css/select2-bootstrap.css}" rel="stylesheet"/>
@@ -84,10 +84,10 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <h4 class="page-title">
-                            <th:block th:if="${null != poorUsers}">
+                            <th:block th:if="${null != blogUsers}">
                                 编辑用户信息
                             </th:block>
-                            <th:block th:unless="${null != poorUsers}">
+                            <th:block th:unless="${null != blogUsers}">
                                 发布用户信息
                             </th:block>
                         </h4>
@@ -96,11 +96,11 @@
 
                         <input type="hidden" id="attach_url" th:value="${attach_url}" />
 
-                        <form id="poorUserForm">
+                        <form id="bloguserForm">
                             <input type="hidden" name="uid"
-                                   th:value="${poorUsers!=null and poorUsers.uid!=null}?${poorUsers.uid}: ''" id="uid"/>
+                                   th:value="${blogUsers!=null and blogUsers.uid!=null}?${blogUsers.uid}: ''" id="uid"/>
                             <input type="hidden" name="status"
-                                   th:value="${poorUsers!=null and poorUsers.status !=null}?${poorUsers.status}: 'publish'"
+                                   th:value="${blogUsers!=null and blogUsers.status !=null}?${blogUsers.status}: 'publish'"
                                    id="status"/>
                             <input type="hidden" name="enjoyPolicy" id="enjoyPolicy-editor"/>
                             <input type="hidden" name="outpoorDate" id="hidOutpoorDate"/>
@@ -111,31 +111,31 @@
                                 <input type="text" class="form-control" placeholder="请用户姓名（必须）" name="username"
                                        required="required"
                                        aria-required="true"
-                                       th:value="${poorUsers!=null and poorUsers.username!=null }?${poorUsers.username}: ''"/>
+                                       th:value="${blogUsers!=null and blogUsers.username!=null }?${blogUsers.username}: ''"/>
                             </div>
 
                             <div class="form-group col-md-6" style="padding: 0 0 0 10px;">
                                 <input type="text" class="form-control"
                                        placeholder="手机号码" name="mobilePhone"
-                                       th:value="${poorUsers!=null and poorUsers.mobilePhone !=null}?${poorUsers.mobilePhone}: ''"/>
+                                       th:value="${blogUsers!=null and blogUsers.mobilePhone !=null}?${blogUsers.mobilePhone}: ''"/>
                             </div>
 
                             <div class="form-group col-md-6" style="padding: 0 10px 0 0;">
                                 <input name="email" id="email" type="text" class="form-control" placeholder="邮箱"
-                                       th:value="${poorUsers!=null and poorUsers.email !=null}?${poorUsers.email}: ''"/>
+                                       th:value="${blogUsers!=null and blogUsers.email !=null}?${blogUsers.email}: ''"/>
                             </div>
                             <div class="form-group col-md-6" style="padding: 0 10px 0 0;">
                                 <input name="idNumber" id="idNumber" type="text" class="form-control" placeholder="身份证号码"
-                                       th:value="${poorUsers!=null and poorUsers.idNumber !=null}?${poorUsers.idNumber}: ''"/>
+                                       th:value="${blogUsers!=null and blogUsers.idNumber !=null}?${blogUsers.idNumber}: ''"/>
                             </div>
                             <div class="form-group col-md-6" style="padding: 0 10px 0 0;">
                                 <input name="age" id="age" type="text" class="form-control" placeholder="年龄"
-                                       th:value="${poorUsers!=null and poorUsers.age !=null}?${poorUsers.age}: ''"/>
+                                       th:value="${blogUsers!=null and blogUsers.age !=null}?${blogUsers.age}: ''"/>
                             </div>
-                            <div class="form-group col-md-6" style="padding: 0 10px 0 0;">
-                                <input name="poorReason" id="poorReason" type="text" class="form-control" placeholder="原因"
-                                       th:value="${poorUsers!=null and poorUsers.poorReason !=null}?${poorUsers.poorReason}: ''"/>
-                            </div>
+                            <!--<div class="form-group col-md-6" style="padding: 0 10px 0 0;">-->
+                                <!--<input name="poorReason" id="poorReason" type="text" class="form-control" placeholder="原因"-->
+                                       <!--th:value="${blogUsers!=null and blogUsers.poorReason !=null}?${blogUsers.poorReason}: ''"/>-->
+                            <!--</div>-->
                             <div class="form-group col-md-6" style="padding: 0 10px 0 0;">
                                 <input id="outpoorDate" type="text" class="form-control" placeholder="时间"
                             </div>
@@ -155,19 +155,19 @@
                                 </select>
                             </div>-->
                             <div class="clearfix"></div>
-                            <div id="md-container" class="form-group">
-                                <textarea placeholder="享受政策" id="md-editor" th:utext="${poorUsers!=null and poorUsers.enjoyPolicy !=null}?${poorUsers.enjoyPolicy}: ''"></textarea>
-                            </div>
+                            <!--<div id="md-container" class="form-group">-->
+                                <!--<textarea placeholder="享受政策" id="md-editor" th:utext="${blogUsers!=null and blogUsers.enjoyPolicy !=null}?${blogUsers.enjoyPolicy}: ''"></textarea>-->
+                            <!--</div>-->
                             <div class="clearfix"></div>
 
                             <div class="text-right">
-                                <a class="btn btn-default waves-effect waves-light" th:href="@{/admin/pooruser}">返回列表</a>
+                                <a class="btn btn-default waves-effect waves-light" th:href="@{/admin/bloguser}">返回列表</a>
                                 <button type="button" class="btn btn-primary waves-effect waves-light"
-                                        onclick="subPoorUser('publish');">
+                                        onclick="subbloguser('publish');">
                                     保存
                                 </button>
                                 <button type="button" class="btn btn-warning waves-effect waves-light"
-                                        onclick="subPoorUser('draft');">
+                                        onclick="subbloguser('draft');">
                                     存为草稿
                                 </button>
                             </div>
@@ -192,6 +192,6 @@
 <script th:src="@{/admin/plugins/to-markdown/3.1.0/to-markdown.min.js}"></script>
 
 <script th:src="@{/admin/js/laydate.js}"></script>
-<script th:src="@{/admin/js/pooruser.js}"></script>
+<script th:src="@{/admin/js/bloguser.js}"></script>
 </body>
 </html>

@@ -27,41 +27,41 @@ import javax.servlet.http.HttpServletRequest;
  * @author xj
  */
 @Controller
-@RequestMapping("admin/pooruser")
+@RequestMapping("admin/bloguser")
 public class BlogUserController extends AbstractController {
     private static final Logger logger = LoggerFactory.getLogger(BlogUserController.class);
 
     @Resource
     private IContentService contentService;
     @Resource
-    private IBlogUserService poorUserService;
+    private IBlogUserService blogUserService;
 
     @Resource
     private ILogService logService;
     @GetMapping(value = "")
     public String index(@RequestParam(value = "page", defaultValue = "1") int page,
                         @RequestParam(value = "limit", defaultValue = "15") int limit,HttpServletRequest request) {
-        PoorUserVoExample poorUserVoExample = new PoorUserVoExample();
-        poorUserVoExample.setOrderByClause("created desc");
-        poorUserVoExample.createCriteria().andTypeEqualTo(Types.ARTICLE.getType());
-        PageInfo<BlogUserVo> poorUserVoPageInfo = poorUserService.getArticlesWithpage(poorUserVoExample,  page, limit);
-        request.setAttribute("poorUsers", poorUserVoPageInfo);
-        return "admin/pooruser_list";
+        BlogUserVoExample blogUserVoExample = new BlogUserVoExample();
+        blogUserVoExample.setOrderByClause("created desc");
+        blogUserVoExample.createCriteria().andTypeEqualTo(Types.ARTICLE.getType());
+        PageInfo<BlogUserVo> bloguserVoPageInfo = blogUserService.getArticlesWithpage(blogUserVoExample,  page, limit);
+        request.setAttribute("blogUsers", bloguserVoPageInfo);
+        return "admin/bloguser_list";
     }
 
     @GetMapping(value = "new")
     public String newPage(HttpServletRequest request) {
         request.setAttribute(Types.ATTACH_URL.getType(), Commons.site_option(Types.ATTACH_URL.getType()));
-        return "admin/pooruser_edit";
+        return "admin/bloguser_edit";
     }
 
     @GetMapping(value = "/{uid}")
     public String editPage(@PathVariable String uid, HttpServletRequest request) {
-        BlogUserVo blogUserVo = poorUserService.getPoorUse(uid);
-        request.setAttribute("poorUsers", blogUserVo);
+        BlogUserVo blogUserVo = blogUserService.getPoorUse(uid);
+        request.setAttribute("blogUsers", blogUserVo);
         request.setAttribute(Types.ATTACH_URL.getType(), Commons.site_option(Types.ATTACH_URL.getType()));
-        request.setAttribute("active", "pooruser");
-        return "admin/pooruser_edit";
+        request.setAttribute("active", "bloguser");
+        return "admin/bloguser_edit";
     }
 
     @PostMapping(value = "publish")
@@ -71,7 +71,7 @@ public class BlogUserController extends AbstractController {
         UserVo users = this.user(request);
         blogUserVo.setType(Types.ARTICLE.getType());
         try {
-            poorUserService.publish(blogUserVo);
+            blogUserService.publish(blogUserVo);
         } catch (Exception e) {
             String msg = "用户发布失败";
             return ExceptionHelper.handlerException(logger, msg, e);
@@ -85,7 +85,7 @@ public class BlogUserController extends AbstractController {
     public RestResponseBo modifyArticle(BlogUserVo blogUserVo, HttpServletRequest request) {
         blogUserVo.setType(Types.ARTICLE.getType());
         try {
-            poorUserService.updatePoorUser(blogUserVo);
+            blogUserService.updatebloguser(blogUserVo);
         } catch (Exception e) {
             String msg = "用户编辑失败";
             return ExceptionHelper.handlerException(logger, msg, e);

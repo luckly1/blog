@@ -3,14 +3,14 @@ package springboot.modal.vo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PoorUserVoExample {
+public class BlogUserVoExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public PoorUserVoExample() {
+    public BlogUserVoExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 

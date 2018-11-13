@@ -1,5 +1,4 @@
 package springboot.modal.vo;
-
 import lombok.Data;
 
 import java.io.Serializable;

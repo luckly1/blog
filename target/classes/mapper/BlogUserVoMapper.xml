@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="springboot.dao.PoorUserVoMapper">
+<mapper namespace="springboot.dao.BlogUserVoMapper">
   <resultMap id="BaseResultMap" type="springboot.modal.vo.BlogUserVo">
     <id column="uid" jdbcType="INTEGER" property="uid" />
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="mobile_phone" jdbcType="VARCHAR" property="mobilePhone" />
     <result column="email" jdbcType="VARCHAR" property="email" />
-    <result column="id_number" jdbcType="VARCHAR" property="idNumber" />
-    <result column="age" jdbcType="VARCHAR" property="age" />
-    <result column="poor_reason" jdbcType="VARCHAR" property="poorReason" />
-    <result column="outpoor_date" jdbcType="INTEGER" property="outpoorDate" />
-    <result column="info_image" jdbcType="VARCHAR" property="infoImage" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="springboot.modal.vo.BlogUserVo">
-    <result column="enjoy_policy" jdbcType="LONGVARCHAR" property="enjoyPolicy" />
+    <result column="created" jdbcType="INTEGER" property="created" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -74,12 +70,12 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    uid, username, email, mobile_phone, id_number, age,status, poor_reason, info_image, outpoor_date
+    uid, username, email, mobile_phone,status
   </sql>
   <sql id="Blob_Column_List">
-    enjoy_policy
+    created
   </sql>
-  <select id="selectByExampleWithBLOBs" parameterType="springboot.modal.vo.PoorUserVoExample" resultMap="ResultMapWithBLOBs">
+  <select id="selectByExampleWithBLOBs" parameterType="springboot.modal.vo.BlogUserVoExample" resultMap="ResultMapWithBLOBs">
     select
     <if test="distinct">
       distinct
@@ -87,21 +83,21 @@
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
-    from t_poorusers
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
+    from t_blogusers
+    <!--<if test="_parameter != null">-->
+      <!--<include refid="Example_Where_Clause" />-->
+    <!--</if>-->
     <if test="orderByClause != null">
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByExample" parameterType="springboot.modal.vo.PoorUserVoExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="springboot.modal.vo.BlogUserVoExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from t_poorusers
+    from t_blogusers
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -114,7 +110,7 @@
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
-    from t_poorusers
+    from t_blogusers
     where uid = #{uid,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
@@ -128,7 +124,7 @@
     </if>
   </delete>
   <insert id="insert" parameterType="springboot.modal.vo.BlogUserVo" useGeneratedKeys="true" keyProperty="uid">
-    insert into t_poorusers (uid, username, email,created,outpoor_date,
+    insert into t_blogusers (uid, username, email,created,outpoor_date,
     mobile_phone,status,type,id_number,age,poor_reason,
     info_image, enjoy_policy)
     values (#{uid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR},
@@ -357,7 +353,7 @@
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="springboot.modal.vo.ContentVo">
-    update t_poorusers
+    update t_blogusers
     <set>
       <if test="username != null">
         username = #{username,jdbcType=VARCHAR},

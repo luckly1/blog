@@ -40,6 +40,9 @@ public class MetaVo implements Serializable{
      */
     private Integer sort;
 
+    /**
+     * 所属分类
+     */
     private Integer parent;
 
     private static final long serialVersionUID = 1L;

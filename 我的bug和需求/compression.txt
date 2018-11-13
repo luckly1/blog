@@ -6,3 +6,10 @@ lombok 安装：https://blog.csdn.net/shmily_lsl/article/details/80689307
             <artifactId>lombok</artifactId>
             <version>1.16.6</version>
         </dependency>
+
+
+        cannot resolve symbol 'lombok'
+
+
+        1. File-->Invalidated cache
+        2. reimport maven，重新把maven import到Idea中。

@@ -9,11 +9,11 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 import springboot.dao.ContentVoMapper;
-import springboot.dao.PoorUserVoMapper;
+import springboot.dao.BlogUserVoMapper;
 import springboot.exception.TipException;
 import springboot.modal.redisKey.BlogUserKey;
 import springboot.modal.vo.BlogUserVo;
-import springboot.modal.vo.PoorUserVoExample;
+import springboot.modal.vo.BlogUserVoExample;
 import springboot.service.IBlogUserService;
 import springboot.util.DateKit;
 import springboot.util.RedisKeyUtil;
@@ -31,7 +31,7 @@ public class BlogUserServcieImpl implements IBlogUserService {
     @Resource
     private ContentVoMapper contentDao;
     @Resource
-    private PoorUserVoMapper poorUserDao;
+    private BlogUserVoMapper blogUserVoMapper;
 
 
     @Autowired
@@ -41,9 +41,9 @@ public class BlogUserServcieImpl implements IBlogUserService {
     @Autowired
     private ValueOperations<String,Object> valueOperations;
     @Override
-    public PageInfo<BlogUserVo> getArticlesWithpage(PoorUserVoExample poorUserVoExample, Integer page, Integer limit) {
+    public PageInfo<BlogUserVo> getArticlesWithpage(BlogUserVoExample blogUserVoExample, Integer page, Integer limit) {
         PageHelper.startPage(page, limit);
-        List<BlogUserVo> blogUserVos = poorUserDao.selectByExampleWithBLOBs(poorUserVoExample);
+        List<BlogUserVo> blogUserVos = blogUserVoMapper.selectByExampleWithBLOBs(blogUserVoExample);
         return new PageInfo<>(blogUserVos);
     }
 
@@ -59,7 +59,7 @@ public class BlogUserServcieImpl implements IBlogUserService {
 //        if(blogUserVo.getOutpoorDate()!=null){
 //            blogUserVo.setOutpoorDate(time);
 //        }
-        poorUserDao.insert(blogUserVo);
+        blogUserVoMapper.insert(blogUserVo);
     }
 
     @Override
@@ -69,7 +69,7 @@ public class BlogUserServcieImpl implements IBlogUserService {
         BlogUserVo blogUserVo = (BlogUserVo) valueOperations.get(poorUserKey);
         if (blogUserVo == null){
             if (StringUtils.isNotBlank(id)) {
-                    blogUserVo = poorUserDao.selectByPrimaryKey(Integer.valueOf(id));
+                    blogUserVo = blogUserVoMapper.selectByPrimaryKey(Integer.valueOf(id));
                     valueOperations.set(poorUserKey, blogUserVo);
                     redisService.expireKey(poorUserKey, BlogUserKey.LIVE_TIME, TimeUnit.HOURS);
                     return blogUserVo;
@@ -79,7 +79,7 @@ public class BlogUserServcieImpl implements IBlogUserService {
     }
 
     @Override
-    public void updatePoorUser(BlogUserVo blogUserVo) {
+    public void updatebloguser(BlogUserVo blogUserVo) {
         String poorUserKey = RedisKeyUtil.getKey(BlogUserKey.TABLE_NAME, BlogUserKey.MAJOR_KEY, Integer.toString(blogUserVo.getUid()));
         // 检查用户输入
         checkContent(blogUserVo);
@@ -88,7 +88,7 @@ public class BlogUserServcieImpl implements IBlogUserService {
         }
         int time = DateKit.getCurrentUnixTime();
         blogUserVo.setEnjoyPolicy(EmojiParser.parseToAliases(blogUserVo.getEnjoyPolicy()));
-        poorUserDao.updateByPrimaryKeySelective(blogUserVo);
+        blogUserVoMapper.updateByPrimaryKeySelective(blogUserVo);
         valueOperations.set(poorUserKey, blogUserVo);
         redisService.expireKey(poorUserKey, BlogUserKey.LIVE_TIME, TimeUnit.HOURS);
 

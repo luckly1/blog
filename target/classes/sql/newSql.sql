@@ -90,19 +90,25 @@ CREATE TABLE `t_contents` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+
+
+
+
+
 DROP TABLE IF EXISTS `t_metas`;
 
 CREATE TABLE `t_metas` (
-  `mid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(200) DEFAULT NULL,
-  `slug` varchar(200) DEFAULT NULL,
-  `type` varchar(32) NOT NULL DEFAULT '' ,
-  `description` varchar(200) DEFAULT NULL ,
-  `sort` int(10) unsigned DEFAULT '0',
-  `parent` int(10) unsigned DEFAULT '0',
+  `mid` int(10) unsigned NOT NULL AUTO_INCREMENT comment '项目主键',
+  `name` varchar(200) DEFAULT NULL comment '名称',
+  `slug` varchar(200) DEFAULT NULL comment '项目缩略名',
+  `type` varchar(32) NOT NULL DEFAULT ''  comment '项目类型',
+  `description` varchar(200) DEFAULT NULL  comment '选项描述',
+  `sort` int(10) unsigned DEFAULT '0' comment '项目排序',
+  `parent` int(10) unsigned DEFAULT '0' comment '所属分类',
   PRIMARY KEY (`mid`),
   KEY `slug` (`slug`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 
 
@@ -115,7 +121,10 @@ CREATE TABLE `t_options` (
   `description` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
+alter table t_options comment '配置表';
+alter table t_options modify column name varchar(32) comment '配置名称';
+alter table t_options modify column value varchar(1000) comment '配置值';
+alter table t_options modify column description varchar(200) comment '描述';
 
 DROP TABLE IF EXISTS `t_relationships`;
 
@@ -188,7 +197,7 @@ alter table t_blogusers comment '管理人员表';
 -- alter table t_blogusers modify column status varchar(32) comment '用户状态(1、待通过 2、正常 3、停用)';
 -- alter table t_blogusers modify column created int(10) comment '用户注册时的时间';
 -- alter table t_blogusers modify column info_image int(10) comment '用户图片路径';
--- alter table t_blogusers add column type varchar(16) default 'post' comment '用户上传附件类型';
+ alter table t_blogusers modify column type varchar(16) default 'post' comment '用户请求方式(post) 用于防止注入';
 
 
 

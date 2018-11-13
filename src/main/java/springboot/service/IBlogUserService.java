@@ -2,7 +2,7 @@ package springboot.service;
 
 import com.github.pagehelper.PageInfo;
 import springboot.modal.vo.BlogUserVo;
-import springboot.modal.vo.PoorUserVoExample;
+import springboot.modal.vo.BlogUserVoExample;
 
 /**
  * @author xj
@@ -14,7 +14,7 @@ public interface IBlogUserService {
      * @param limit
      * @return
      */
-    PageInfo<BlogUserVo> getArticlesWithpage(PoorUserVoExample poorUserVoExample, Integer page, Integer limit);
+    PageInfo<BlogUserVo> getArticlesWithpage(BlogUserVoExample blogUserVoExample, Integer page, Integer limit);
     /**
      * 添加用户信息
      *
@@ -31,5 +31,5 @@ public interface IBlogUserService {
      * 编辑用户信息
      *
      */
-    void updatePoorUser(BlogUserVo blogUserVo);
+    void updatebloguser(BlogUserVo blogUserVo);
 }

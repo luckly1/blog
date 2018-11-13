@@ -19,11 +19,11 @@ $.tale.prototype.alertOk = function (options) {
     options.showCancelButton = false;
     options.showCloseButton = false;
     options.type = 'success';
-    options.timer = 1000;
+    options.timer = 1500;
     this.alertBox(options);
     //刷新页面
     if (options.reload) {
-        setTimeout(function(){window.location.href=options.path; },1000);
+        setTimeout(function(){window.location.href=options.path; },1500);
     }
 
 };
@@ -114,6 +114,7 @@ $.tale.prototype.alertBox = function (options) {
         text: options.text,
         type: options.type,
         showCancelButton: options.showCancelButton,
+        showLoaderOnConfirm: options.showLoaderOnConfirm || false,
         confirmButtonColor: options.confirmButtonColor || '#3085d6',
         confirmButtonText: options.confirmButtonText || '确定',
         cancelButtonText: options.cancelButtonText || '取消',
@@ -138,9 +139,6 @@ $.tale.prototype.alertBox = function (options) {
     });
 
 };
-$.tale.prototype.closeBox = function(){
-    swal.close();
-}
 /**
  * 全局post函数
  *
