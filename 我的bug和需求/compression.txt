@@ -13,3 +13,9 @@ lombok 安装：https://blog.csdn.net/shmily_lsl/article/details/80689307
 
         1. File-->Invalidated cache
         2. reimport maven，重新把maven import到Idea中。
+
+
+https://blog.csdn.net/qq_17107171/article/details/81189622   centos7配置jdk
+shirt + :  centos上退出编辑,进入命令行
+
+https://www.cnblogs.com/lgqboke/p/6873734.html    mysql
