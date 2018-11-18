@@ -1,0 +1,27 @@
+﻿lombok 安装：https://blog.csdn.net/shmily_lsl/article/details/80689307
+
+<!--lombok-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.6</version>
+        </dependency>
+
+
+        cannot resolve symbol 'lombok'
+
+
+        1. File-->Invalidated cache
+        2. reimport maven，重新把maven import到Idea中。
+
+
+https://blog.csdn.net/qq_17107171/article/details/81189622   centos7配置jdk
+shirt + :  centos上退出编辑,进入命令行
+
+https://www.cnblogs.com/lgqboke/p/6873734.html    mysql
+项目完整搭建：https://www.cnblogs.com/yixtx/p/8385191.html
+MySQL 5.7 中 Your password does not satisfy the current policy requirements   https://blog.csdn.net/maxsky/article/details/51171474
+初始mysql需要重新设置密码  https://blog.csdn.net/xie_sining/article/details/80452670
+项目打包   https://blog.csdn.net/qq_33512843/article/details/80951741
+解决ftp上传问题最终版：先   https://www.cnblogs.com/yixtx/p/8385191.html    后遇到 553  文件创建不了----》  https://www.jb51.net/article/130915.htm
+https://www.cnblogs.com/zuidongfeng/p/8032505.html redis

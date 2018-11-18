@@ -610,3 +610,4 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template "blogu
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:745)
+2018-11-17 23:05:34,765 ERROR s.controller.GlobalExceptionHandler[22] - find exception:e+Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool

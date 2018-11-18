@@ -27,3 +27,7 @@
 2018-11-13 16:51:36,073 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver[189] - Resolved exception caused by Handler execution: springboot.exception.TipException: query content by id and return is not one
 2018-11-13 17:03:21,360 WARN  o.t.templatemode.TemplateMode[150] - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
 2018-11-13 17:50:14,132 WARN  o.t.templatemode.TemplateMode[150] - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2018-11-17 23:04:16,312 WARN  o.t.templatemode.TemplateMode[150] - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2018-11-17 23:05:34,779 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver[189] - Resolved exception caused by Handler execution: org.springframework.data.redis.RedisConnectionFailureException: Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+2018-11-17 23:07:26,131 WARN  o.t.templatemode.TemplateMode[150] - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2018-11-17 23:36:26,205 WARN  o.t.templatemode.TemplateMode[150] - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.

@@ -7,13 +7,15 @@
     <groupId>blog</groupId>
     <artifactId>blog</artifactId>
     <version>1.1</version>
-
+    <!--默认为jar方式-->
+    <!--<packaging>jar</packaging>-->
+    <!--改为war方式-->
+    <packaging>war</packaging>
     <properties>
         <java.version>1.8</java.version>
         <thymeleaf.version>3.0.0.RELEASE</thymeleaf.version>
         <thymeleaf-layout-dialect.version>2.0.0</thymeleaf-layout-dialect.version>
     </properties>
-    <packaging>jar</packaging>
 
     <build>
         <plugins>
@@ -168,6 +170,25 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <!--打包的时候可以不用包进去，别的设施会提供。事实上该依赖理论上可以参与编译，测试，运行等周期。
+                相当于compile，但是打包阶段做了exclude操作-->
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

@@ -11,7 +11,9 @@ import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
@@ -35,7 +37,7 @@ import javax.sql.DataSource;
 @SpringBootApplication
 @EnableScheduling
 @MapperScan("springboot.dao")
-public class StartApplication {
+public class StartApplication extends SpringBootServletInitializer {
 
     @Resource
     private HttpPortCfg httpPortCfg;
@@ -51,7 +53,10 @@ public class StartApplication {
         app.run(args);
 
     }
-
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return builder.sources(StartApplication.class);
+    }
 
     // datasource注入
     @Bean
