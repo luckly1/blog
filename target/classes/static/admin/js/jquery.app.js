@@ -3,29 +3,42 @@
     var Sidemenu = function () {
         this.$body = $("body"),
             this.$openLeftBtn = $(".open-left"),
-            this.$menuItem = $("#sidebar-menu a")
+            this.$menuItem = $("#sidebar-menu a"),
+            this.menu = $(".side-menu")
     };
+    $("#wrapper").addClass("isMobile");
+
     Sidemenu.prototype.openLeftBar = function () {
         $("#wrapper").toggleClass("enlarged");
         $("#wrapper").addClass("forced");
 
+
         if ($("#wrapper").hasClass("enlarged") && $("body").hasClass("fixed-left")) {
             $("body").removeClass("fixed-left").addClass("fixed-left-void");
-        } else if (!$("#wrapper").hasClass("enlarged") && $("body").hasClass("fixed-left-void")) {
+        }
+        else if (!$("#wrapper").hasClass("enlarged") && $("body").hasClass("fixed-left-void")) {
             $("body").removeClass("fixed-left-void").addClass("fixed-left");
         }
 
         if ($("#wrapper").hasClass("enlarged")) {
             //xj 20181105 修改图标未隐藏问题
             $("#title").hide();
+            $("#wrapper").removeClass("isMobile");
             $(".left ul").removeAttr("style");
+            $("#wrapper.enlarged .left.side-menu").animate({width:'70px'});
         } else {
             $("#title").show();
+            $("#wrapper").addClass("isMobile");
             $(".subdrop").siblings("ul:first").show();
+            $(".side-menu").animate({width:'240px'});
+            $("#wrapper.enlarged .left.side-menu").animate({width:'240px'});
+
         }
 
         toggle_slimscroll(".slimscrollleft");
         $("body").trigger("resize");
+        // xj 新加mobile样式
+        commonMobileStyle();
     },
         //menu item click
         Sidemenu.prototype.menuItemClick = function (e) {
@@ -60,7 +73,6 @@
                 e.stopPropagation();
                 $this.openLeftBar();
             });
-
             // LEFT SIDE MAIN NAVIGATION
             $this.$menuItem.on('click', $this.menuItemClick);
 
@@ -70,7 +82,11 @@
 
         //init Sidemenu
         $.Sidemenu = new Sidemenu, $.Sidemenu.Constructor = Sidemenu
-
+        if (commonMobileStyle()){
+            if ($("#wrapper").hasClass("isMobile")){
+                $(".open-left").click();
+            }
+        }
 }(window.jQuery),
 
 //portlets
@@ -198,6 +214,12 @@ var toggle_fullscreen = function () {
 
 }
 
+function stopMenu() {
+    if ($("#wrapper").hasClass("isMobile")){
+        $(".open-left").click();
+    }
+}
+
 function executeFunctionByName(functionName, context /*, args */) {
     var args = [].slice.call(arguments).splice(2);
     var namespaces = functionName.split(".");
@@ -208,6 +230,29 @@ function executeFunctionByName(functionName, context /*, args */) {
     return context[func].apply(this, args);
 }
 var w, h, dw, dh;
+
+/**
+ * xj 手机端样式/公共
+ * @param functionName
+ * @param context
+ * @returns {*}
+ */
+function commonMobileStyle() {
+    w = $(window).width();
+    h = $(window).height();
+    dw = $(document).width();
+    dh = $(document).height();
+    if (w < 990) {
+
+        // $("#wrapper.enlarged .left.side-menu").css("width",$(window).width()/2);//重置
+        // $(".topbar-left").css("width",$("#wrapper.enlarged .left.side-menu").width());//重置
+        // $(".side-menu").css("opacity",0.7);
+        $("#title").hide();
+        return true;
+    }
+    return false;
+}
+
 var changeptype = function () {
     w = $(window).width();
     h = $(window).height();
@@ -217,15 +262,16 @@ var changeptype = function () {
     /*if(jQuery.browser.mobile === true){
      $("body").addClass("mobile").removeClass("fixed-left");
      }*/
-
     if (!$("#wrapper").hasClass("forced")) {
         if (w > 990) {
             $("body").removeClass("smallscreen").addClass("widescreen");
             $("#wrapper").removeClass("enlarged");
-        } else {
+        }
+        else {
             $("body").removeClass("widescreen").addClass("smallscreen");
             $("#wrapper").addClass("enlarged");
             $(".left ul").removeAttr("style");
+            $(".side-menu").css("opacity",0.6);
         }
         if ($("#wrapper").hasClass("enlarged") && $("body").hasClass("fixed-left")) {
             $("body").removeClass("fixed-left").addClass("fixed-left-void");

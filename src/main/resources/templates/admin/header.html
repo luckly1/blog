@@ -16,6 +16,7 @@
     <link rel="stylesheet" th:href="@{/admin/css/sweetalert/animate.css}"/>
     <!--<link rel="stylesheet" th:href="@{/admin/css/sweetalert/buttons.css}"/>-->
     <script th:src="@{/admin/js/sweetalert/sweetalert.min.js}"></script>
+    <script th:src="@{/admin/js/commonStyle.js}"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -65,7 +66,7 @@
         </div>
     </div>
 </div>
-<div class="left side-menu">
+<div class="left side-menu" onblur="stopMenu()">
     <div class="sidebar-inner slimscrollleft">
         <div id="sidebar-menu">
             <ul>

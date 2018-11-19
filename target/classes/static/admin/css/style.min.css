@@ -3270,7 +3270,7 @@ body.fixed-left .side-menu.left {
 
 #wrapper.enlarged .left.side-menu {
     padding-top: 80px;
-    width: 70px;
+    /*width: 70px;*/
     z-index: 5
 }
 

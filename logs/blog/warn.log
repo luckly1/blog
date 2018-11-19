@@ -31,3 +31,4 @@
 2018-11-17 23:05:34,779 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver[189] - Resolved exception caused by Handler execution: org.springframework.data.redis.RedisConnectionFailureException: Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
 2018-11-17 23:07:26,131 WARN  o.t.templatemode.TemplateMode[150] - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
 2018-11-17 23:36:26,205 WARN  o.t.templatemode.TemplateMode[150] - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2018-11-19 14:12:02,015 WARN  o.t.templatemode.TemplateMode[150] - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
